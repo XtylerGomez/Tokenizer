@@ -1,0 +1,1 @@
+g++ main.cpp ./src/Tokenizer.cpp -o ./bin/run.exe

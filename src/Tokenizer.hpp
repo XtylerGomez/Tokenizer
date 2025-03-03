@@ -3,15 +3,17 @@
 #include <iostream>
 #include <cstring>
 #include <cctype>
+#include <string>
 
-typedef enum {RELOP} TokenType;
-typedef enum {LT, LE, GT, GE, EQ, ERROR} RelopType;
+using namespace std;
+
+
 
 class Tokenizer{
 
     public:
-    TokenType type;
-    RelopType attribute;
+    string type;
+    string attribute;
 
     const char *input;
 
@@ -19,9 +21,8 @@ class Tokenizer{
 
     char nextChar();
     void retract();
-    void fail();
 
-    void getRelop();
+    void getToken();
     
 };
 

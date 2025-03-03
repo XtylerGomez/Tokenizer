@@ -9,22 +9,16 @@ using namespace std;
 int main(){
 
     Tokenizer t;
-    t.input = "<= > >= < ==";  
-    cout << "Analizando: " << t.input << endl;
+    t.input = "4 +3.4 +98.1E5";  
+    cout << "Entrada : " << t.input << endl;
 
     while (t.pos < strlen(t.input)) {
         while (isspace(t.input[t.pos])) t.pos++;  
         if (t.pos >= strlen(t.input)) break;
 
-        t.getRelop();
-        switch (t.attribute) {
-            case LT: cout << "Token: LT (<)" << endl; break;
-            case LE: cout << "Token: LE (<=)" << endl; break;
-            case GT: cout << "Token: GT (>)" << endl; break;
-            case GE: cout << "Token: GE (>=)" << endl; break;
-            case EQ: cout << "Token: EQ (=)" << endl; break;
-            default: cout << "Token desconocido" << endl;
-        }
+        t.getToken();
+
+        cout<<"<"<<t.type<<", "<<t.attribute<<">";
     }
 
     return 0;

@@ -6,23 +6,20 @@
 #include <string>
 
 using namespace std;
-
-
-
 class Tokenizer{
 
     public:
-    string type;
-    string attribute;
+    string type; //Tipo de Token (Entero, Flotante, Error, etc)
+    string attribute; //Atributo del Token (el valor del token)
 
-    const char *input;
+    const char *input; //Entrada a tokenizar
 
-    int pos = 0;
+    int pos = 0; //Posición actual en la entrada
 
-    char nextChar();
-    void retract();
+    char nextChar(); //Funcion para avanzar un caracter
+    void retract(); //Funcion para retroceder un caracter
 
-    void getToken();
+    void getToken(); //Tokenizador
     
 };
 
